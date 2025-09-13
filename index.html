@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      text-align: center;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .container {
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-top: 20px;
+      animation: glow 1.5s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff9, 0 0 20px #f39, 0 0 30px #f06; }
+      to { text-shadow: 0 0 20px #ff0, 0 0 30px #f3f, 0 0 40px #f69; }
+    }
+    .btn {
+      background: #ff4081;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #e91e63;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    #message {
+      display: none;
+      font-size: 1.8em;
+      margin: 20px 0;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎂 Happy Birthday Palak 🎂</h1>
+    <button class="btn" onclick="startCelebration()">Click to Celebrate 🎉</button>
+    <p id="message">Wishing you lots of love, laughter & happiness! 💖</p>
+
+    <div class="gallery" id="gallery" style="display:none;">
+      <img src="https://source.unsplash.com/300x300/?birthday,cake" alt="Cake">
+      <img src="https://source.unsplash.com/300x300/?balloons,party" alt="Balloons">
+      <img src="https://source.unsplash.com/300x300/?friends,celebration" alt="Friends">
+    </div>
+
+    <audio id="song" src="https://www.computerhope.com/jargon/m/example.mp3"></audio>
+  </div>
+
+  <script>
+    function startCelebration() {
+      document.getElementById('message').style.display = 'block';
+      document.getElementById('gallery').style.display = 'grid';
+      let song = document.getElementById('song');
+      song.play();
+    }
+  </script>
+</body>
+</html>
